@@ -19,7 +19,6 @@ def getAllFileNames(directory):
 
 
 def find_closest_file(target_file, file_list):
-    print("target file ," , target_file)
     target_time = datetime.strptime(target_file[:-4], '%d.%m.%Y %H-%M-%S')
 
     closest_file = None
@@ -50,7 +49,7 @@ def days_ago(input_date_str):
 
 def read_data(file, name_of_product) -> List[Produkt]:
     li = []
-    df = pd.read_csv("..\\Data\\{}".format(file), sep=':')
+    df = pd.read_csv("Data\\{}".format(file), sep=':')
     for index, j in df.iterrows():
         name = j['name']
         price = j['price']

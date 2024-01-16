@@ -19,7 +19,7 @@ SORTED_BY_PRICE = [url + sort_price_desc for url in URLS]   #shows results based
 THREE_HOURS = 3600 * 3
 HOUR = 3600
 
-folder_path = '..\\Data'
+folder_path = 'Data'
 
 
 
