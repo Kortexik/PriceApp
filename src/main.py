@@ -12,7 +12,8 @@ items_to_check= ["szczoteczka smilesonic", "iphone 14", 'chromecast', 'playstati
 def main():
     path = getPath()
     file = executeMultiple(SORTED_BY_PRICE, path)
-
+    for item in items_to_check:
+       compare_prices(file[8:], item)
     
 
 
