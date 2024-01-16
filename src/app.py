@@ -53,7 +53,7 @@ def makeObjects(offers):
     return newL
 
 def getPath():
-    return os.path.join("..\\Data", f'{get_datetime()}.csv')
+    return os.path.join("Data", f'{get_datetime()}.csv')
 
 
 def writeToFile(listOfObjects, path):
