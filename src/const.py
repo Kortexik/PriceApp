@@ -1,4 +1,8 @@
 import json
+from mysqlinsert import create_mysql_connection
+
+connection = create_mysql_connection()
+
 
 with open("config.json") as config_file:
     config_data =  json.load(config_file)

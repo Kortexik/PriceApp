@@ -3,8 +3,8 @@ import os
 import requests as re
 from bs4 import BeautifulSoup 
 from datetime import datetime
-
-
+from mysqlinsert import writeToDB
+from const import connection
 
 def get_datetime():
     current_time = datetime.now()
@@ -68,22 +68,11 @@ def writeToFile(listOfObjects, path):
 def executeDataMininig(url, path):
     offs = connect_and_get_offers(url)
     list_of_objects = makeObjects(offs)
-    writeToFile(sorted(list_of_objects, key=lambda x: x.price, reverse=True), path)
+    writeToDB(list_of_objects, path, connection)
     
 
 
 def executeMultiple(urls, path):
     for url in urls:
         executeDataMininig(url, path)
-    addHeader(path)
     return path
-
-
-def addHeader(path):
-    with open(path, 'r') as data:
-        content = data.read()
-        data.close()
-    with open(path, 'w') as data:
-        data.write("name:price:link\n")
-        data.write(content)
-        data.close()
