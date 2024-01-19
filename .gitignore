@@ -5,4 +5,4 @@ Scripts
 __pycache__
 share
 pyvenv.cfg
-src/__pycache__
+src\__pycache__
