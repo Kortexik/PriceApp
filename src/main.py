@@ -1,6 +1,6 @@
 
 from app import *
-from const import SORTED_BY_PRICE, THREE_HOURS
+from const import SORTED_BY_PRICE, TWO_HOURS
 import time
 from dbanalyzer import check_products
 
@@ -17,8 +17,9 @@ def main():
 
 
 if __name__ == "__main__":
+    while True:
         main()
-        #time.sleep(THREE_HOURS)
+        time.sleep(TWO_HOURS)
 
 
 

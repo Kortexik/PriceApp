@@ -20,8 +20,7 @@ URLS = ['https://www.ceneo.pl/;szukaj-szczoteczka+elektryczna+smilesonic+ex', 'h
         'https://www.ceneo.pl/;szukaj-lego+lamborghini']
 
 SORTED_BY_PRICE = [url + sort_price_desc for url in URLS]   #shows results based on lowest price if added to url
-THREE_HOURS = 3600 * 3
-HOUR = 3600
+TWO_HOURS = 3600 * 2
 
 folder_path = 'Data'
 

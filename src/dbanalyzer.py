@@ -59,8 +59,6 @@ def check_products():
         prices = get_prices(connection, datetimes, name)
 
         if len(prices) < 2:
-            print(f"name: {name}, {datetimes}, {prices}")
-            print(f"Not enough prices available for {name}")
             continue
 
         new_price = float(prices[0])
