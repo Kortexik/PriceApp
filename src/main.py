@@ -5,10 +5,6 @@ import time
 from dbanalyzer import check_products
 
 
-
-items_to_check= ["szczoteczka smilesonic", "iphone 14", 'chromecast', 'playstation 5', 'lego lamborghini', 'lego orchidea', 'lego bonsai']
-
-
 def main():
     path = getPath()
     executeMultiple(SORTED_BY_PRICE, path)
