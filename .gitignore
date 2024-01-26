@@ -1,7 +1,7 @@
 config.json
 Lib
 Include
-Data
+Data/
 Scripts
 __pycache__
 share
