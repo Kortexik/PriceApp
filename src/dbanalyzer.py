@@ -73,7 +73,7 @@ def check_products():
             print("new_price = ", new_price)
             
 
-    connection.close()
+    #connection.close()
 
 
 
