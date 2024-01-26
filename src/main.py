@@ -19,7 +19,7 @@ def main():
 if __name__ == "__main__":
     while True:
         main()
-        time.sleep(TWO_HOURS)
+        #time.sleep(TWO_HOURS)
 
 
 

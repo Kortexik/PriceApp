@@ -13,7 +13,7 @@ URL = f"https://api.telegram.org/bot{TOKEN}"
 
 
 sort_price_desc = ";0112-0.htm"
-URLS = ['https://www.ceneo.pl/;szukaj-szczoteczka+elektryczna+smilesonic+ex', 'https://www.ceneo.pl/Smartfony;szukaj-iphone+15', 
+URLS = ['https://www.ceneo.pl/;szukaj-szczoteczka   3+elektryczna+smilesonic+ex', 'https://www.ceneo.pl/Smartfony;szukaj-iphone+15', 
         'https://www.ceneo.pl/Sprzet_RTV;szukaj-google+chromecast+4k', 'https://www.ceneo.pl/Smartfony;szukaj-iphone+14',
         'https://www.ceneo.pl/Konsole_do_gier;szukaj-playstation+5', 'https://www.ceneo.pl/Konsole_do_gier;szukaj-xbox+series+s'
         'https://www.ceneo.pl/;szukaj-szczoteczka+elektryczna+seysso+gold?', 'https://www.ceneo.pl/;szukaj-lego+bonsai', 'https://www.ceneo.pl/;szukaj-lego+orchidea', 
