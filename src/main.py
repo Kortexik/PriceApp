@@ -20,7 +20,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\nCtrl+C detected. Closing the program.")
         connection.close()
-        print("\n Connection closed")
+        print("Connection closed")
 
 
 
