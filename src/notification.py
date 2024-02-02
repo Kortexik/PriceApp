@@ -8,7 +8,11 @@ def change_params(name, oldPrice, newPrice, date1, date2, link):
               "text": text}
     return params
 
-
+def lowest_in_month_params(name, price, link):
+    text = f"THE PRODUCT: {name} CURRENTLY HAS A LOWEST PRICE IN MONTH: {price}.\nCHECK IT OUT: {link}"
+    params = {"chat_id": CHAT_ID,
+              "text": text}
+    return params
 
 def send_notification(params):
     r = requests.get(URL + "/sendMessage", params=params) 

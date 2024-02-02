@@ -1,14 +1,14 @@
-
 from app import *
 from const import SORTED_BY_PRICE, TWO_HOURS, connection
 import time
-from dbanalyzer import check_products
+from dbanalyzer import check_products, lowest_in_month
 
 
 def main():
     path = getPath()
     executeMultiple(SORTED_BY_PRICE, path)
     check_products()
+    lowest_in_month()
     
 
 
