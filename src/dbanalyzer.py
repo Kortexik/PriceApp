@@ -1,6 +1,10 @@
 from const import connection
 from datetime import datetime, timedelta
 from notification import send_notification, change_params, lowest_in_month_params
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
+import numpy as np
+
 
 def get_names():
 #gets a list of names in a database
@@ -122,8 +126,55 @@ def lowest_in_month():
         link = get_link(product)
         listOfPrices = get_prices_from_30days(product)
         new_price = get_price_on_dt(new_dt, product)
-
+        #print("LOWEST PRICE: ", product, min(listOfPrices))
         if (new_price is not None):
             if (new_price < min(listOfPrices)):
                 print("Lowest price in month")
                 send_notification(lowest_in_month_params(product, new_price, link))
+
+
+def get_price_and_dt(name):
+    query = "SELECT price, datetime FROM data WHERE name = %s"
+    cursor = connection.cursor()
+    cursor.execute(query, (name,))
+    result = cursor.fetchall()
+    cursor.close()
+    return [[float(row[0]), row[1].strftime("%Y-%m-%d %H:%M:%S")] for row in result]
+
+
+
+
+def draw_graph(product):
+    data = get_price_and_dt(product)
+    xs = [item[1] for item in data]
+    ys = [item[0] for item in data]
+    
+    x_display = [xs[0]]
+    y_display = [ys[0]]
+    change_points = []
+    for i in range(1, len(ys)):
+        if ys[i] != ys[i-1]:
+            x_display.append(xs[i])
+            y_display.append(ys[i])
+            change_points.append(i)
+
+
+    
+    plt.figure(figsize=(16, 9), num='Price Graph')
+    plt.title(f"Price graph of {product}")
+    plt.plot(x_display, y_display, marker='o')
+    for i in change_points:
+        plt.annotate(f'{ys[i]}', xy=(xs[i], ys[i]), xytext=(0, 10),
+            textcoords='offset points', ha='center', weight='bold')
+
+    plt.xlabel('Date', weight='bold')
+    plt.ylabel('Price', weight='bold')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+    
+
+
+"""
+GET QT TO WORK MAEK IT A SEPARRETE BRANCH
+"""
