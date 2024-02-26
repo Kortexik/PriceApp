@@ -10,13 +10,12 @@ def main():
     check_products()
     lowest_in_month()
     
-
-
 if __name__ == "__main__":
     try:
         while True:
             main()
             time.sleep(TWO_HOURS)
+        
     except KeyboardInterrupt:
         print("\nCtrl+C detected. Closing the program.")
         connection.close()

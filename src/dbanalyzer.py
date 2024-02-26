@@ -8,7 +8,7 @@ import numpy as np
 
 def get_names():
 #gets a list of names in a database
-    query = "SELECT DISTINCT name FROM data"
+    query = "SELECT DISTINCT name FROM data WHERE name NOT LIKE '%zł%'"
     cursor = connection.cursor()
     cursor.execute(query)
     data = cursor.fetchall()
