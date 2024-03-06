@@ -25,7 +25,6 @@ class ItemList(QListWidget):
         draw_graph(name)
 
     def filter_list(self, text):
-        # Filter items in the QListWidget based on the text in the search bar
         for index in range(self.count()):
             item = self.item(index)
             item.setHidden(text.lower() not in item.text().lower())

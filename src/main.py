@@ -21,5 +21,3 @@ if __name__ == "__main__":
         connection.close()
         print("Connection closed")
 
-
-
