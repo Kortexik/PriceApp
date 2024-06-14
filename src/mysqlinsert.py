@@ -1,7 +1,6 @@
 from datetime import datetime
 import mysql.connector
 
-# Function to create a MySQL connection
 def create_mysql_connection():
     return mysql.connector.connect(
         host='localhost',
