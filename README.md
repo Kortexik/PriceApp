@@ -14,7 +14,6 @@ How it works:
 Also has function to check it the price is lowest in a month.
 
 How the notification looks:
-<image>
 
 
 
@@ -25,11 +24,9 @@ This tool uses plotly module and reads whole database for choosen product. There
 How the GUI looks:
 
 The GUI has a clean look and an option to filter it using search bar.
-<image>
 
 
 How the graphs look:
-<image>
 
 
 
