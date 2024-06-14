@@ -14,22 +14,19 @@ How it works:
 Also has function to check it the price is lowest in a month.
 
 How the notification looks:
-
-
+![image](https://github.com/Kortexik/PriceApp/assets/137905044/2d769b73-16d8-470a-9490-23eadc15a993)
 
 Graphing tool (run separetly from the script):
 
 This tool uses plotly module and reads whole database for choosen product. There is a simple GUI written using Pyside6 (run window.py) and clicking an item creates an interactive graph in your browser.
 
 How the GUI looks:
+![image](https://github.com/Kortexik/PriceApp/assets/137905044/d7f54e9a-cd82-45f4-8604-3aee0e51d1e5)
 
 The GUI has a clean look and an option to filter it using search bar.
 
-
 How the graphs look:
-
-
-
+![image](https://github.com/Kortexik/PriceApp/assets/137905044/ce27381f-041e-4de1-adf1-c26ed3d5db71)
 
 How to setup:
 
