@@ -2,7 +2,7 @@
 
 ## A functional script featuring BeautifulSoup for obtaining ceneo.pl pricing data that stores it on local mysql database. Also featuring plotly graphs.
 
-This project was built to help me save some money with online shopping. It is setup to run on my local machine every 2 hours with task scheduler (although it could be run from cloud 24/7), storing the data, and notifing the user if the price dropped by 20% or more. This parameter can be changed in const.py file. It also features a plotly graphing tool to let you see patterns in price. 
+This project was built to help me save some money with online shopping. It is setup to run on my local machine every 2 hours with task scheduler (although it could be run from cloud 24/7), storing the data, and notifing the user if the price dropped by 10% or more. This parameter can be changed in const.py file. It also features a plotly graphing tool to let you see patterns in price. 
 
 
 How it works:
