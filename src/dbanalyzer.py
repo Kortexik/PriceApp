@@ -1,9 +1,8 @@
-from const import connection
+from const import connection, PRICE_DROP_PERCENTAGE
 from datetime import datetime, timedelta
 from notification import send_notification, change_params, lowest_in_month_params
-import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-import numpy as np
+import plotly.express as px
+import pandas as pd
 
 
 def get_names():
@@ -46,7 +45,7 @@ def get_prices(dts, name):
 def new_price_lower(prices):
     new_price = float(prices[0])
     last_price = float(prices[1])
-    if new_price < last_price:
+    if new_price <=  ((100 - PRICE_DROP_PERCENTAGE) / 100) * last_price:
         return True
     return False
 
@@ -126,7 +125,6 @@ def lowest_in_month():
         link = get_link(product)
         listOfPrices = get_prices_from_30days(product)
         new_price = get_price_on_dt(new_dt, product)
-        #print("LOWEST PRICE: ", product, min(listOfPrices))
         if (new_price is not None):
             if (new_price < min(listOfPrices)):
                 print("Lowest price in month")
@@ -142,39 +140,22 @@ def get_price_and_dt(name):
     return [[float(row[0]), row[1].strftime("%Y-%m-%d %H:%M:%S")] for row in result]
 
 
-
-
 def draw_graph(product):
     data = get_price_and_dt(product)
-    xs = [item[1] for item in data]
-    ys = [item[0] for item in data]
-    
-    x_display = [xs[0]]
-    y_display = [ys[0]]
-    change_points = []
-    for i in range(1, len(ys)):
-        if ys[i] != ys[i-1]:
-            x_display.append(xs[i])
-            y_display.append(ys[i])
-            change_points.append(i)
+    df = pd.DataFrame(data, columns=['Price', 'Data'])
 
+    fig = px.line(
+        df,
+        x="Data",
+        y="Price",
+        markers=True
+    )
 
-    
-    plt.figure(figsize=(16, 9), num='Price Graph')
-    plt.title(f"Price graph of {product}")
-    plt.plot(x_display, y_display, marker='o')
-    for i in change_points:
-        plt.annotate(f'{ys[i]}', xy=(xs[i], ys[i]), xytext=(0, 10),
-            textcoords='offset points', ha='center', weight='bold')
-
-    plt.xlabel('Date', weight='bold')
-    plt.ylabel('Price', weight='bold')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
-    
-
-
-"""
-GET QT TO WORK MAEK IT A SEPARRETE BRANCH
-"""
+    fig.update_layout(
+        title = f'Change in price of {product} by date',
+        xaxis_title='Date',
+        yaxis_title='Price (zł)',
+        xaxis_tickangle=-45,
+        template='ggplot2'
+    )
+    fig.show()

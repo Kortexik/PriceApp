@@ -75,4 +75,4 @@ def executeDataMininig(url, path):
 def executeMultiple(urls, path):
     for url in urls:
         executeDataMininig(url, path)
-    return path
+        return path

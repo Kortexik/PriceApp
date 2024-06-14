@@ -1,0 +1,14 @@
+{
+    "CHAT_ID" : "Your chat_id",
+    "TOKEN" : "Your token",
+    "URLS" : ["URL1",
+              "URL2",
+              "...",
+              "URLn"],
+
+    "host" : "Your hostname",
+    "user" : "Your username",
+    "password" : "Your password",
+    "database" : "Your database name",
+    "PRICE_DROP_PERCENTAGE" : 10
+}

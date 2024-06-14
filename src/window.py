@@ -66,19 +66,19 @@ class Screen(QMainWindow):
         # Create QListWidget
         self.item_list = ItemList()
         self.layout.addWidget(self.item_list)
-        
         self.setCentralWidget(self.central_widget)
 
     def showEvent(self, event):
         super().showEvent(event)
         # Set focus to another widget when the window is first shown
         self.item_list.setFocus()
-
+    
     def filter_list(self, text):
         self.item_list.filter_list(text)
 
-app = QApplication(sys.argv)
-widget = Screen()
-widget.show()
-sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    widget = Screen()
+    widget.show()
+    app.exec()
 
