@@ -1,26 +1,26 @@
-
 from app import *
-from const import SORTED_BY_PRICE, THREE_HOURS
+from const import SORTED_BY_PRICE, TWO_HOURS, connection
 import time
-from datanalazer import compare_prices
-
-
-
-items_to_check= ["szczoteczka smilesonic", "iphone 14", 'chromecast', 'playstation 5', 'lego lamborghini', 'lego orchidea', 'lego bonsai']
+from dbanalyzer import check_products, lowest_in_month
 
 
 def main():
     path = getPath()
-    file = executeMultiple(SORTED_BY_PRICE, path)
-    for item in items_to_check:
-       compare_prices(file[5:], item)
+    executeMultiple(SORTED_BY_PRICE, path)
+    check_products()
+    lowest_in_month()
     
 
 
 if __name__ == "__main__":
-        main()
-
-
+    try:
+        while True:
+            main()
+            time.sleep(TWO_HOURS)
+    except KeyboardInterrupt:
+        print("\nCtrl+C detected. Closing the program.")
+        connection.close()
+        print("Connection closed")
 
 
 
