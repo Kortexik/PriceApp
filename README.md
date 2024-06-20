@@ -38,5 +38,5 @@ The GUI has a clean look and an option to filter it using search bar.
 2. Install required modules (run in terminal: pip install -r requirments.txt).
 3. Create MySql database with a table that uses table_structure.sql.
 4. Fill in the config.json file.
-5. Run main.py 2 times so there arer at least 2 records for each product
+5. Run main.py 2 times so there are at least 2 records for each product
 6. Run window.py for graphing tool if you want, you might need more records of data for them to look meaningful.
