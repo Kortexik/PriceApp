@@ -1,7 +1,7 @@
 
 # Python Web Scraping Script For Analyzing And Being Informed Of Item Price Drops.
 
-## A functional script featuring BeautifulSoup for obtaining ceneo.pl pricing data that stores it on local mysql database. Also featuring plotly graphs.
+## A functional script featuring BeautifulSoup for obtaining ceneo.pl pricing data that stores it on local MySQL database. Also featuring plotly graphs.
 
 This project was built to help me save some money with online shopping. It is setup to run on my local machine every 2 hours with task scheduler (although it could be run from cloud 24/7), storing the data, and notifing the user if the price dropped by 10% or more. This parameter can be changed in const.py file. It also features a plotly graphing tool to let you see patterns in price. 
 
@@ -36,7 +36,7 @@ The GUI has a clean look and an option to filter it using search bar.
 
 1. Pull this repo to choosen directory on your PC.
 2. Install required modules (run in terminal: pip install -r requirments.txt).
-3. Create MySql database with a table that uses table_structure.sql.
+3. Create MySQL database with a table that uses table_structure.sql.
 4. Fill in the config.json file.
 5. Run main.py 2 times so there are at least 2 records for each product
 6. Run window.py for graphing tool if you want, you might need more records of data for them to look meaningful.
