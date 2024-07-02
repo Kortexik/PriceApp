@@ -38,7 +38,7 @@ class Screen(QMainWindow):
             self.setStyleSheet(file.read())
 
         self.setWindowTitle("Product list")
-        self.setFixedSize(1280, 720)
+        self.resize(1280, 720)
 
         # Create central widget and layout
         self.central_widget = QWidget()

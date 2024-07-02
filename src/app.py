@@ -4,7 +4,7 @@ import requests as re
 from bs4 import BeautifulSoup 
 from datetime import datetime
 from mysqlinsert import writeToDB
-from const import connection
+from const import connection, SORTED_BY_PRICE
 
 def get_datetime():
     current_time = datetime.now()
@@ -74,5 +74,7 @@ def executeDataMininig(url, path):
 
 def executeMultiple(urls, path):
     for url in urls:
+        print("URL processed: ", url)
         executeDataMininig(url, path)
-        return path
+        print("Done")
+
